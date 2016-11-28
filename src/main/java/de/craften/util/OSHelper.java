@@ -108,19 +108,18 @@ public final class OSHelper {
 
         String path = "";
         if (operatingSystem.equals("windows")) {
-            path = System.getenv("APPDATA") + pS + ".minecraft" + pS;
+            path = System.getenv("APPDATA") + pS + ".minecraft" + pS + "kmrp" + pS;
             if (new File(path).exists()) {
                 return path;
             }
         } else if (operatingSystem.equals("linux")) {
-            path = System.getProperty("user.home") + pS + ".minecraft"
-                    + pS;
+            path = System.getProperty("user.home") + pS + ".minecraft" + pS + "kmrp" + pS;
             if (new File(path).exists()) {
                 return path;
             }
         } else if (operatingSystem.equals("mac") || operatingSystem.equals("osx")) {
             path = System.getProperty("user.home") + pS + "Library" + pS
-                    + "Application Support" + pS + "minecraft" + pS;
+                    + "Application Support" + pS + "minecraft" + pS + "kmrp" + pS;
             if (new File(path).exists()) {
                 return path;
 
