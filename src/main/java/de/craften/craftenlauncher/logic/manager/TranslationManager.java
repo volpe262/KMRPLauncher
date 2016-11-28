@@ -10,7 +10,7 @@ public class TranslationManager {
     private static final Logger LOGGER = LogManager.getLogger(TranslationManager.class);
 
     public static String getString(String phrase) {
-        String baseName = "stringsBundle";
+        String baseName = "stringsBundle_ru";
         try {
             ResourceBundle bundle = ResourceBundle.getBundle(baseName);
             return bundle.getString(phrase);
