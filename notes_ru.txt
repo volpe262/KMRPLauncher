@@ -1,0 +1,2 @@
+что лаунчер получает от сервера (AuthenticationService.java, 95 - 151)
+AccessToken, ClientToken, ProfileID, Name

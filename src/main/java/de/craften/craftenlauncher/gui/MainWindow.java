@@ -34,7 +34,7 @@ public class MainWindow extends JDialog {
         setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
         getContentPane().setSize(new Dimension(376, height));
         setLocationRelativeTo(null);
-        setTitle("Craften Launcher");
+        setTitle("KMRPLauncher");
         setResizable(false);
 
         JPanel content = new JPanel();
