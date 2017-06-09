@@ -1,2 +1,32 @@
 что лаунчер получает от сервера (AuthenticationService.java, 95 - 151)
 AccessToken, ClientToken, ProfileID, Name
+
+
+файл AuthenticationService.java:
+
+s160-180, функция getSSID:
+
+- принимает (String username, String password)
+- записывает в json название игры, версию, agent (версия json?), username и password
+- отдаёт ответ сервера с адреса authenticate:
+return JSONConnector.executePost("https://authserver.mojang.com/authenticate", gson.toJson(jsonResult));
+
+s192-200, функция isValid:
+- принимает (String accessToken)
+- создаёт json с accesToken
+- отдаёт ответ сервера с адреса validate (булево значение):
+dummy = JSONConnector.executePost("https://authserver.mojang.com/validate", gson.toJson(jsonAccessToken))
+
+s210-230, фунция refresh:
+- принимает объект класса MinecraftUser
+- создаёт json c accessToken и clientToken, которые получает из объекта
+- отправляет на сервер запрос, на адрес refresh
+response = JSONConnector.executePost("https://authserver.mojang.com/refresh", gson.toJson(jsonPayload))
+- устанавливает объекту полученный accessToken
+- возвращает булево значение в зависимости от успеха
+
+s238-246, функция invalidate:
+- принимает объект класса MinecraftUser
+- создаёт json c accessToken и clientToken, которые получает из объекта
+- отправляет на сервер запрос, на адрес invalidate
+- ничего не возвращает
